@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+int i;
+int cout = 0;
+void guess(int k) {
+	scanf_s("%d", &i);
+
+	   if (i > k){
+			printf("Too High; try again \n");
+			++cout;
+			return guess(k);
+
+		}
+	   if (i < k) {
+		    printf("Too Low; try again \n");
+		    ++cout;
+		    return guess(k);
+
+	       }
+		
+	   if (i == k)
+	   {
+		   ++cout;
+		   printf("You won in ");
+		   printf("%d ", cout);
+
+		   if (cout == 1) {
+			   printf("guess !\n");
+		   }
+		   else {
+			   printf("guesses !\n");
+
+		   }
+	   }
+	     
+
+}
+int main() {
+	int k = rand();
+	srand(time(NULL));
+	guess(k);
+	return 0;
+
+
+}
